@@ -1,0 +1,41 @@
+plane''' 1 is first , -1 is second'''
+check win{
+    1  :1 win;
+    -1 :-1win;
+    0  :no one win ;
+    2  :draw(no empty);
+    -2 :erroe code
+    }
+
+    init() -->19*19 board as self.p1919
+    record type
+    -----
+    startrecord(file path)-->open file
+    addrecord()-->write corrdinate to file
+    closerecord()-->close file
+    print()-->print 19*19 board
+
+    ----
+    change(x,y,d)
+        -->assert validation on empty
+        -->change p1919
+        -->check win (board + d)
+    >-->return current situation advise by check win{ 1:1 win; -1:-1win ;0:no one win ;2:draw(no empty);,-2 :erroe code} <===
+    check win (board + d )
+        ==>return True False of board
+    Human input ###UNDO<===============
+        -->print curret situstion
+        -->get input x,y
+        -->validate by checkemptydig
+        -->change
+        -->return change
+===>checkemptydig(data ,first hand// 禁手)
+    return empty space that can put in
+
+==========>>>Machine input <<<=========
+    step 1 : on game control coding interface-->
+                               Machine input(functionfromother-obj(board data e.g checkdig p1919){
+                                 return x  ,y
+                                 })
+    st2p 2 :validate -----if fail return -2
+    step 3 : change(x,y)  return the return of chang x,y
