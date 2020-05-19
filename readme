@@ -1,12 +1,29 @@
-plane''' 1 is first , -1 is second'''
-check win{
+This project only requir Numpy and python !!!
+CvsC.py
+Run to create game data in random vs Random
+D:\RR/ASKED BY PROGRAM/trainlabel.npy
+----------------------/traindata.npy
+----------------------/traindatastep.npy
+gomoku01/py oldversion of gomoku Human vs Human
+RandomMachine.py a class for supporting computer to make decision
+if you want it to be in random mode:
+change Line 22-23 to :
+        self.resulty = self.EmptySpaceList[temp][0]
+        self.resultx =self.EmptySpaceList[temp][1]
+plane.py a file used for gomoku basic rule inclue Renju rule
+All data will save in D:/data with datetime.txt
+and play by replay.py by inputing it absolute path
+test.py a old version of comuter cs computer
+
+plane''' 1 is first hand , -1 is second hand '''
+check win game state{
     1  :1 win;
     -1 :-1win;
     0  :no one win ;
     2  :draw(no empty);
     -2 :erroe code
     }
-
+________________Below are note only . Please Ignore it_________
     init() -->19*19 board as self.p1919
     record type
     -----

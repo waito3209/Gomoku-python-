@@ -273,11 +273,7 @@ class plane:
         if self.ondrive:
             try:
                 timestr = time.strftime("%Y%m%d-%H%M%S")
-                from google.colab import drive
-                drive.mount('/content/drive')
-                self.f.open('/content/drive/My Drive/'+timestr+'.txt', 'w')
 
-                drive.flush_and_unmount()
             except:
                 pass
         else:
@@ -450,3 +446,64 @@ class plane:
             self.f.closed
         except:
             pass
+import random
+
+
+
+
+r =random
+class test:
+    def __init__(self):
+        self.resulty=0
+        self.resultx=0
+    def InputData__Available(self,data):
+        self.EmptySpaceList =[]
+        for y in range(len(data)):
+            for x in range(len(data[y])):
+                if data[y,x] == True:
+                    self.EmptySpaceList.append([y,x])
+
+        self.makedecision()
+    def makedecision(self):
+        temp = r.randrange(len(self.EmptySpaceList))
+
+        self.resulty = self.EmptySpaceList[temp][0]
+        self.resultx =self.EmptySpaceList[temp][1]
+        #print(type(self).__name__+"   make decision")
+
+
+
+
+print("game start")
+a=plane()
+p2=test()
+
+
+
+gamestate=0
+turning="p1"
+while gamestate==0:
+    a.print(data=a.p1919)
+    if turning=="p1":
+        a.checkemptydig(a.p1919,1)
+        gamestate=a.Humaninput(1)
+        turning='p2'
+
+    elif turning=="p2":
+        a.checkemptydig(a.p1919, -1)
+        gamestate = a.Humaninput(-1)
+        turning = 'p2'
+        turning = 'p1'
+
+if gamestate==1:
+    print("p1 win________")
+if gamestate==-1:
+    print("p2 win________")
+if gamestate==-2:
+    print("ERROR")
+if gamestate==2:
+    print("Draw")
+
+a.__del__()
+
+time.sleep(10)
